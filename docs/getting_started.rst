@@ -85,7 +85,7 @@ using the :ref:`iucm.preproc.forcing` command:
 
 .. ipython::
 
-    In [8]: !iucm -v preproc forcing -steps 250 -trans 500
+    In [8]: !iucm -v preproc forcing -steps 50 -trans 500
 
 This now did create a new netCDF file with two variables
 
@@ -111,7 +111,7 @@ Having prepared this input file, we can run our experiment with the
 
 .. ipython::
 
-    In [9]: !iucm -id my_first_experiment configure -s run -i input.nc -t 250 -max 15000
+    In [9]: !iucm -id my_first_experiment configure -s run -i input.nc -t 50 -max 15000
 
 The options here in detail:
 
@@ -125,19 +125,19 @@ run
     The :ref:`iucm.run` command which tells iucm to run the experiment. The
     options here are
 
-    -t 250
-        Tells to model to make 250 steps
+    -t 50
+        Tells to model to make 50 steps
     -max 15000
         Tells the model that the maximum population is 15000 inhabitants per
         grid cell
 
-The output now is a netCDF file with 250 steps:
+The output now is a netCDF file with 50 steps:
 
 .. ipython::
 
     In [10]: ds = xr.open_dataset(
        ....:     'my_first_project/experiments/my_first_experiment/'
-       ....:     'outdata/my_first_experiment_1-250.nc')
+       ....:     'outdata/my_first_experiment_1-50.nc')
 
     In [11]: ds
 
@@ -191,7 +191,7 @@ the ``-prob`` (or ``--probabilistic``) argument, e.g. via
 
 .. ipython::
 
-    In [9]: !iucm run -nr -prob 1000 -t 250
+    In [9]: !iucm run -nr -prob 1000 -t 50
 
 Instead of simply moving population from one cell to another, it distributes
 the population to multiple cells based on their probability to lower the
@@ -201,7 +201,7 @@ energy consumption for the city.
 
     In [10]: ds = xr.open_dataset(
        ....:     'my_first_project/experiments/my_first_experiment/'
-       ....:     'outdata/my_first_experiment_1-250.nc')
+       ....:     'outdata/my_first_experiment_1-50.nc')
 
     @suppress
     In [11]: def plot_result():
@@ -358,7 +358,12 @@ case, this variable looks like
 
 .. ipython::
 
+    @verbatim
     In [21]: !iucm preproc mask masking_shapes.shp
+
+    @suppress
+    In [21]: # we do not make the calculation here to speed up the build
+       ....: xr.open_dataset('max_pop.nc').to_netcdf('input.nc', mode='a')
 
     @savefig docs_getting_started_mask_max_pop.png width=100%
     In [22]: sp = psy.plot.plot2d('input.nc', name='max_pop', cmap='Reds',

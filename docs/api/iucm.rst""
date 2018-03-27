@@ -1,0 +1,20 @@
+Python API Reference
+====================
+
+.. automodule:: iucm
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+
+   iucm.dist
+   iucm.energy_consumption
+   iucm.main
+   iucm.model
+   iucm.utils
+   iucm.version
+
