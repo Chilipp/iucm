@@ -16,3 +16,5 @@ dependencies:
     - psy-simple
     - ipython
     - pyshp
+    - scipy
+    - numpy
