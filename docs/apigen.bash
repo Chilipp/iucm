@@ -4,16 +4,10 @@
 sphinx-apidoc -f -M -e  -T -o api ../iucm/ ../iucm/_dist.*
 # replace chapter title in iucm.rst
 
-if [[ `uname` == 'Darwin' ]]; then
-    INPLACE='-i ""'
-else
-    INPLACE='-i'
-fi
+sed -i -e 1,1s/.*/'Python API Reference'/ api/iucm.rst
+sed -i -e 2,2s/.*/'===================='/ api/iucm.rst
 
-sed $INPLACE -e 1,1s/.*/'Python API Reference'/ api/iucm.rst
-sed $INPLACE -e 2,2s/.*/'===================='/ api/iucm.rst
-
-sed $INPLACE '/Python/ i\
+sed -i '/Python/ i\
 .. _iucm-api-reference:\
 \
 ' api/iucm.rst
