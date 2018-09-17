@@ -23,6 +23,12 @@ from collections import namedtuple
 docstrings = utils.docstrings
 
 
+if np.__version__ < '1.14':
+    rcond = -1
+else:
+    rcond = None
+
+
 #: number of cars per 100 people. The default is 0, i.e. the value is ignored.
 #: Another possible value that has been previously used might be 37.7, the
 #: value for Stuttgart
@@ -128,7 +134,7 @@ def rss(population):
     k[:, :] = np.log(k)
     pmax = population.max()
     y_fit = np.log(population / pmax)
-    ret = lstsq(k, y_fit, rcond=None)[0][0]
+    ret = lstsq(k, y_fit, rcond=rcond)[0][0]
     return np.abs(ret)
 
 
