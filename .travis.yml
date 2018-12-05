@@ -6,22 +6,21 @@ env:
         secure: "cHNnQq27CiFSOkDNpQaNbICh+Vo/gi8LUNW27UGIzCP/u/Ls6PFN6Hv2JQ1HLY/Yw15X8XaP4CotulfnfFoCkE6hPAMvmppMbh/rhd1mBoNNEmW1SEPHzKLE/OO+b5RkWYuurwGpfSYeo+QzQ0liGSBEK1U+tDU0/En6Rg0wZk/6LDf1e42Rpkpo1ZdrN4R3YA/uJlPC7Ld8R3K7oNosq1+g9JU9hpp4d2LBsaUzPopO3vNnMtWGbeNkk7npG0NNwepaT8uPpDer8AI8Li87y6aCgnx7fsofuPpEIZJ3Bp1ouu9k40yiVXKmwkCTpUXQvRka5tBVvn86vzz5v4rMbMV5dKl7S/8XUHbYaApHvVaK41PMyfPwvH17MdtZprYaZM0J+tVRVgH7KAPtaWpnIShglAJEqC77GA2VeiFggfklcEBvuWtPNq74zVe5CZ1/JN3v5jTga93+NSLjI5nIosXezelYzP5NyRWJE+y2MqHbm9iqriPajHs1zE9gomEOx5esmP3lZfNlFWuyEWylKroXOTyZbzcmycSbY2WLRRuMZywQOxd2SacMULMmxAMr9oM/GbOla2G/L+XHjskVSCxAkfi18XAFvXH21D/QE4E+zZZbJuZDwCtnVZci4k4dOo86pAdalntZ1tY7cDDIwv0VcA9c5XelFXMPKd4oboU="
 
 matrix:
-    matrix:
-      include:
-      # linux environments
-      - env:
-          - PYTHON_VERSION=3.7
-        os: linux
-      - env:
-          - PYTHON_VERSION=3.6
-        os: linux
-        # osx environments
-      - env:
-          - PYTHON_VERSION=3.7
-        os: osx
-      - env:
-          - PYTHON_VERSION=3.6
-        os: osx
+    include:
+    # linux environments
+    - env:
+        - PYTHON_VERSION=3.7
+      os: linux
+    - env:
+        - PYTHON_VERSION=3.6
+      os: linux
+      # osx environments
+    - env:
+        - PYTHON_VERSION=3.7
+      os: osx
+    - env:
+        - PYTHON_VERSION=3.6
+      os: osx
 
 before_install:
     # define functions to unset and reset encrypted variables
