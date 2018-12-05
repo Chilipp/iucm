@@ -1,0 +1,52 @@
+{% set name = "iucm" %}
+{% set version = "0.2.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: ../
+
+build:
+  number: 0
+  script: python -m pip install . --no-deps --ignore-installed -vvv
+  entry_points:
+    - iucm = iucm.main:main
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - cython
+    - numpy
+  run:
+    - python
+    - psyplot
+    - model-organization
+    - scipy
+    - netcdf4
+
+test:
+  imports:
+    - iucm
+    - iucm.dist
+  commands:
+    - iucm --help
+
+about:
+  home: https://github.com/Chilipp/iucm
+  license: GPLv3
+  license_family: GPL3
+  license_file: LICENSE
+  summary: 'An Integrated Urban Complexity Model'
+
+  description: |
+    This model simulates urban growth and transformation with the objective of
+    minimising the energy required for transportation.
+  doc_url: http://iucm.readthedocs.io/
+  dev_url: https://github.com/Chilipp/iucm
+
+extra:
+  recipe-maintainers:
+    - Chilipp

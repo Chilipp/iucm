@@ -1,0 +1,31 @@
+environment:
+    matrix:
+        - PYTHON: "C:\\Miniconda36-x64"
+          PYTHON_ARCH: "64"
+        - PYTHON: "C:\\Miniconda36"
+          PYTHON_ARCH: "32"
+        - PYTHON: "C:\\Miniconda37-x64"
+          PYTHON_ARCH: "64"
+        - PYTHON: "C:\\Miniconda37"
+          PYTHON_ARCH: "32"
+
+install:
+    - "SET ORIGPATH=%PATH%"
+    # Prepend newly installed Python to the PATH of this build (this cannot be
+    # done from inside the powershell script as it would require to restart
+    # the parent CMD process).
+    - "SET PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%"
+    - conda config --set always_yes yes --set changeps1 no
+    - conda config --add channels conda-forge
+    - conda update -q conda
+    - conda install conda-build anaconda-client
+    - conda info -a
+    - SET PYTHONWARNINGS='ignore:mode:DeprecationWarning:docutils.io:245'
+
+build: off
+
+test_script:
+    - conda build conda-recipe
+
+deploy_script:
+    - cmd: "python ci\\deploy_anaconda.py"
