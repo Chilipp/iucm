@@ -1,20 +1,20 @@
 name: iucm_docs
 channels:
     - chilipp/label/dev
-    - conda-forge
+    - chilipp/label/master
+    - chilipp
 dependencies:
-    - python=3.6
+    - python=3.7
     - xarray
     - netCDF4
     - matplotlib
     - seaborn
     - sphinx
     - cython
-    - sphinx-argparse
-    - autodocsumm
-    - psyplot
     - psy-simple
     - ipython
     - pyshp
     - scipy
-    - numpy
+    - pip:
+        - sphinx-argparse
+        - autodocsumm

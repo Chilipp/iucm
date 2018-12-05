@@ -22,6 +22,7 @@ import six
 from itertools import product
 import iucm
 import funcargparse
+import warnings
 
 funcargparse.FuncArgParser.epilog_formatter = 'rubric'
 
@@ -29,6 +30,8 @@ funcargparse.FuncArgParser.epilog_formatter = 'rubric'
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('.'))
+
+warnings.filterwarnings('ignore', message="\s*examples.directory")
 
 # -- General configuration ------------------------------------------------
 
