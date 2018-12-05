@@ -47,6 +47,8 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Operating System :: OS Independent',
     ],
     keywords='urban-planning climate energy python modeling',
@@ -64,6 +66,6 @@ setup(
     zip_safe=False,
     data_files=[("", ["LICENSE"])],
     url='https://github.com/Chilipp/iucm',
-    author='Philipp Sommer and Roger Cremades',
+    author='Philipp S. Sommer and Roger Cremades',
     author_email='philipp.sommer@unil.ch',
     )
