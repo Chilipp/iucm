@@ -13,7 +13,7 @@ if os.getenv("TRAVIS") == "true":
 else:
     branch = os.getenv("APPVEYOR_REPO_BRANCH")
     on_release = os.getenv("APPVEYOR_REPO_TAG") != "true"
-label = ['-l', branch] if on_release else []
+label = ['-l', branch] if not on_release else []
 token = ['-t', os.getenv('CONDA_REPO_TOKEN')]
 
 print("Uploading via " +
