@@ -12,7 +12,7 @@ if os.getenv("TRAVIS") == "true":
     on_release = os.getenv("TRAVIS_TAG") != ""
 else:
     branch = os.getenv("APPVEYOR_REPO_BRANCH")
-    on_release = os.getenv("APPVEYOR_REPO_TAG") != "true"
+    on_release = os.getenv("APPVEYOR_REPO_TAG_NAME") != ""
 label = ['-l', branch] if not on_release else []
 token = ['-t', os.getenv('CONDA_REPO_TOKEN')]
 
