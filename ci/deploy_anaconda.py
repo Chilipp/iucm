@@ -9,9 +9,17 @@ repl = 'py' + os.getenv('PYTHON_VERSION').replace('.', '')
 fnames = [py_patt.sub(repl, f) for f in fnames]
 if os.getenv("TRAVIS") == "true":
     branch = os.getenv("TRAVIS_BRANCH")
+    on_release = os.getenv("TRAVIS_TAG") != ""
 else:
     branch = os.getenv("APPVEYOR_REPO_BRANCH")
+    on_release = os.getenv("APPVEYOR_REPO_TAG") != "true"
+label = ['-l', branch] if on_release else []
+token = ['-t', os.getenv('CONDA_REPO_TOKEN')]
+
+print("Uploading via " +
+      " ".join(['anaconda -t *****', 'upload', '--force'] + label + fnames))
+
 spr.check_call(
-    ['anaconda', '-t', os.getenv('CONDA_REPO_TOKEN'), 'upload', '-l', branch,
-     '--force'] + fnames
+    ['anaconda'] + token + ['upload', '--force'] +
+    label + fnames
 )
