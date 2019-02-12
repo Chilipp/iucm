@@ -101,8 +101,6 @@ Cremades, R. and Sommer, P. S.: Computing climate-smart urban land use with the
 Integrated Urban Complexity model (IUCm 1.0), *Geosci. Model Dev.*, 12, 525-539,
 https://doi.org/10.5194/gmd-12-525-2019, 2019.
 
-:download:`BibTex <iucm_entry.bib>` - :download:`EndNote <iucm_entry.enw>`
-
 Furthermore, each release of iucm is
 associated with a DOI using zenodo.org_.
 
