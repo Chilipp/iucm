@@ -1,0 +1,50 @@
+<h1 id="iucm---the-integrated-urban-complexity-model">IUCM - The Integrated Urban Complexity Model</h1>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>docs</td>
+<td><a href="http://iucm.readthedocs.io/en/latest/?badge=latest"><img src="http://readthedocs.org/projects/iucm/badge/?version=latest" alt="Documentation Status" /></a></td>
+</tr>
+<tr class="even">
+<td>package</td>
+<td><a href="https://pypi.python.org/pypi/iucm"><img src="https://img.shields.io/pypi/v/iucm.svg?style=flat" alt="PyPI Package latest release" /></a> <a href="https://conda.anaconda.org/chilipp"><img src="https://anaconda.org/chilipp/iucm/badges/installer/conda.svg" alt="conda" /></a> <a href="https://pypi.python.org/pypi/iucm"><img src="https://img.shields.io/pypi/pyversions/iucm.svg?style=flat" alt="Supported versions" /></a> <a href="https://pypi.python.org/pypi/iucm"><img src="https://img.shields.io/pypi/implementation/iucm.svg?style=flat" alt="Supported implementations" /></a> <a href="https://doi.org/10.5281/zenodo.1982564"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1982564.svg" alt="Zenodo" /></a></td>
+</tr>
+</tbody>
+</table>
+<p>This model simulates urban growth and transformation with the objective of minimising the energy required for transportation.</p>
+<p>The full documentation and installation instructions are available on <a href="http://iucm.readthedocs.io">http://iucm.readthedocs.io</a>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>This package depends on</p>
+<ul>
+<li>python &gt;= 2.7</li>
+<li><a href="http://docs.cython.org/en/latest/">Cython</a></li>
+<li><a href="http://www.numpy.org/">numpy</a></li>
+<li><a href="https://scipy.org/">scipy</a></li>
+<li><a href="http://xarray.pydata.org/">xarray</a></li>
+<li><a href="http://psyplot.readthedocs.io/">psyplot</a></li>
+<li><a href="http://unidata.github.io/netcdf4-python/">netCDF4</a></li>
+<li><a href="http://funcargparse.rtfd.io/">funcargparse</a></li>
+<li><a href="http://model-organization.readthedocs.io/en/latest/">model-organization</a></li>
+</ul>
+<p>To install all the necessary Packages in a conda environment <em>iucm</em>, type:</p>
+<pre><code>$ conda create -n iucm -c conda-forge cython psyplot netCDF4 scipy
+$ conda activate iucm
+$ pip install model-organization</code></pre>
+<p>Then run pip:</p>
+<pre><code>$ pip install iucm</code></pre>
+<p>to install the package from pypi, or:</p>
+<pre><code>$ python setup.py install</code></pre>
+<p>for an installation from a local source. We also provide a conda-package via:</p>
+<pre><code>$ conda install -c chilipp iucm</code></pre>
+<p>More detailed installation instructions can be found in the <a href="http://iucm.readthedocs.io/en/latest/install.html">installation docs</a>.</p>
+<h2 id="how-to-cite-iucm">How to cite IUCm</h2>
+<p>When using the IUCm, you should at least cite the publication in <a href="https://www.geoscientific-model-development.net/index.html">the Journal of Geoscientific Model Developments</a>:</p>
+<p>Cremades, R. and Sommer, P. S.: Computing climate-smart urban land use with the Integrated Urban Complexity model (IUCm 1.0), <em>Geosci. Model Dev.</em>, 12, 525-539, <a href="https://doi.org/10.5194/gmd-12-525-2019">https://doi.org/10.5194/gmd-12-525-2019</a>, 2019.</p>
+<p><code class="interpreted-text" data-role="download">BibTex &lt;docs/iucm_entry.bib&gt;</code> - <code class="interpreted-text" data-role="download">EndNote &lt;docs/iucm_entry.enw&gt;</code></p>
+<p>Furthermore, each release of iucm is associated with a DOI using <a href="https://zenodo.org/">zenodo.org</a>.</p>
+<p><a href="https://doi.org/10.5281/zenodo.1982565"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1982565.svg" alt="zenodo" /></a></p>
+<p>If you want to cite a specific version, please refer to the <a href="https://github.com/Chilipp/iucm/releases/">releases page of iucm</a>.</p>
